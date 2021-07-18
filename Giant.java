@@ -19,7 +19,7 @@ public class Giant extends Critter {
         } else if (move <= 6) {
             return "fee";
         } else if (move <= 12) {
-            return "foe";
+            return "fie";
         }
         return "fum";
     }

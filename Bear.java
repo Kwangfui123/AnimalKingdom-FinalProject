@@ -8,6 +8,7 @@ public class Bear extends Critter{
     public Bear(boolean polar) {
         this.polar = polar;
         getColor();
+        move = 0;
     }
 
     public Color getColor() {
@@ -19,7 +20,7 @@ public class Bear extends Critter{
     public String toString() {
         //Should alternate on each different move between a slash character (/)
         // and a backslash character () starting with a slash.
-        if (move%2 == 0) { return "/"; }
+        if (move%2 == 0) { return "//"; }
         else {return "\\"; }
     }
 
@@ -27,6 +28,7 @@ public class Bear extends Critter{
 
 
     public Action getMove(CritterInfo info) {
+        move++;
         if (info.getFront() == Neighbor.OTHER) {
             return Action.INFECT;
         } else if (info.getFront() == Neighbor.EMPTY) {
